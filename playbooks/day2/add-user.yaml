@@ -1,0 +1,9 @@
+---
+- name: Adds the ansible_svc user account
+  hosts: k8s_cluster
+  tasks:
+    - name: create ansible service account on all nodes
+      user:
+        name: ansible_svc
+        state: present
+      tags: service
